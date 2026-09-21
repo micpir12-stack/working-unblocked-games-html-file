@@ -176,10 +176,10 @@
             <h1>Unblocked Games</h1>
         </div>
         <ul class="game-menu">
-            <li><button class="game-item" onclick="loadGame('Slope', 'https://googleusercontent.com')">Slope</button></li>
-            <li><button class="game-item" onclick="loadGame('2048', 'https://googleusercontent.com')">2048</button></li>
-            <li><button class="game-item" onclick="loadGame('Retro Bowl', 'https://googleusercontent.com')">Retro Bowl</button></li>
-            <li><button class="game-item" onclick="loadGame('Cookie Clicker', 'https://googleusercontent.com')">Cookie Clicker</button></li>
+            <li><button class="game-item" onclick="loadGame('Slope', 'https://github.io')">Slope</button></li>
+            <li><button class="game-item" onclick="loadGame('2048', 'https://github.io')">2048</button></li>
+            <li><button class="game-item" onclick="loadGame('Retro Bowl', 'https://github.io')">Retro Bowl</button></li>
+            <li><button class="game-item" onclick="loadGame('Subway Surfers', 'https://superteamxx.github.io/Subway-Surfers/')">Subway Surfers</button></li>
         </ul>
     </aside>
 
@@ -195,21 +195,21 @@
             
             <!-- Home Dashboard (Grid of Games) -->
             <div id="home-view">
-                <div class="game-card" onclick="loadGame('Slope', 'https://googleusercontent.com')">
+                <div class="game-card" onclick="loadGame('Slope', 'https://github.io')">
                     <div class="game-thumbnail">🟢</div>
                     <p>Slope</p>
                 </div>
-                <div class="game-card" onclick="loadGame('2048', 'https://googleusercontent.com')">
+                <div class="game-card" onclick="loadGame('2048', 'https://github.io')">
                     <div class="game-thumbnail">🔢</div>
                     <p>2048</p>
                 </div>
-                <div class="game-card" onclick="loadGame('Retro Bowl', 'https://googleusercontent.com')">
+                <div class="game-card" onclick="loadGame('Retro Bowl', 'https://github.io')">
                     <div class="game-thumbnail">🏈</div>
                     <p>Retro Bowl</p>
                 </div>
-                <div class="game-card" onclick="loadGame('Cookie Clicker', 'https://googleusercontent.com')">
-                    <div class="game-thumbnail">🍪</div>
-                    <p>Cookie Clicker</p>
+                <div class="game-card" onclick="loadGame('Subway Surfers', 'https://superteamxx.github.io/Subway-Surfers/')">
+                    <div class="game-thumbnail">🏄‍♂️</div>
+                    <p>Subway Surfers</p>
                 </div>
             </div>
 
@@ -230,15 +230,12 @@
         const menuButtons = document.querySelectorAll('.game-item');
 
         function loadGame(name, url) {
-            // Show the game viewport
             homeView.style.display = 'none';
             gameView.style.display = 'block';
             
-            // Set the iframe target
             gameFrame.src = url;
             currentTitle.textContent = name;
 
-            // Update sidebar button highlights
             menuButtons.forEach(btn => {
                 if (btn.textContent === name) {
                     btn.classList.add('active');
@@ -249,13 +246,10 @@
         }
 
         function showHome() {
-            // Clear current game and toggle screens
             gameFrame.src = "";
             gameView.style.display = 'none';
             homeView.style.display = 'grid';
             currentTitle.textContent = 'Dashboard';
-
-            // Reset menu highlighting
             menuButtons.forEach(btn => btn.classList.remove('active'));
         }
     </script>
